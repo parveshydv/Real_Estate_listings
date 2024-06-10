@@ -73,7 +73,7 @@ CREATE TABLE `transactions`(
     `t_id` VARCHAR(128)
 );
 
-NSERT INTO transactions
+INSERT INTO transactions
 VALUES (10000,96000000,'TownHouse','P4942','T202494');
 
 
