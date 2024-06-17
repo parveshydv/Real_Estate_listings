@@ -75,6 +75,11 @@ CREATE TABLE `transactions` (
     FOREIGN KEY (`prop_id`) REFERENCES `property`(`prop_id`)
 );
 
+<<<<<<< HEAD
+=======
+INSERT INTO transactions
+VALUES (10000,96000000,'TownHouse','P4942','T202494');
+>>>>>>> 120e2a19921eba1b3d1c31370f7b16f0d8d79b03
 
 CREATE TABLE `rent` (
     `prop_id` VARCHAR(128),
@@ -168,6 +173,7 @@ VALUES
 
 
 
+<<<<<<< HEAD
 
 
 INSERT INTO `customer` (`cust_id`, `surname`, `name`, `email`, `address`, `num`)
@@ -264,3 +270,6 @@ VALUES
 ('T002', 300000, 30000000, 'Condo', 'P003'),
 ('T003', 1200000, 120000000, 'Villa', 'P005'),
 ('T004', 9600000, 960000000, 'TownHouse', 'P006');
+=======
+-- Find Properties That Are Currently Rented Out and Their Renters
+>>>>>>> 120e2a19921eba1b3d1c31370f7b16f0d8d79b03
