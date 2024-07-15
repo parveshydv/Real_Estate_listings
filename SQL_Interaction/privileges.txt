@@ -1,0 +1,25 @@
+  Our database have two user types
+ - Admin
+ - User(someone accessing database through fronted application)
+
+
+
+# i am creating a new user called userA
+
+CREATE USER 'userA'@'localhost' IDENTIFIED BY '666777';
+
+
+
+# granting Privilages for userA
+
+GRANT SELECT ON abc  TO 'userA'@'localhost';
+
+
+
+#FLUSH privileges to ensure changes are reflected
+
+FLUSH PRIVILEGES;
+
+
+# see privileges
+SHOW GRANTS FOR 'userA'@'localhost';
