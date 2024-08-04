@@ -62,7 +62,7 @@ COMMIT;
 SET TRANSACTION READ WRITE ISOLATION LEVEL SERIALIZABLE;
 START TRANSACTION;
 INSERT INTO property (prop_id, cust_id, prop_type, prop_status, prop_price, paddress) 
-VALUES ('P007', 'C002', 'Condo', 'For Sale', 450000, '789 New St');
+VALUES ('P007', 2, 'Condo', 'For Sale', 450000, '789 New St');
 SELECT * FROM property WHERE prop_id = 'P007';
 COMMIT;
 
