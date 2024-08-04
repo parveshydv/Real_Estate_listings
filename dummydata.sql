@@ -23,10 +23,10 @@ INSERT INTO `requirement` (`request_id`, `cust_id`, `price`, `area`, `prop_type`
 (3, 3, 250000, 'City Center', 'Condo');
 
 -- Insert sample data into `requires`
-INSERT INTO `requires` (`require_id`, `request_id`) VALUES
-('R001', '1'),
-('R002', '2'),
-('R003', '3');
+INSERT INTO `requires` (`request_id`) VALUES
+(1),
+(2),
+(3);
 
 -- Insert sample data into `rent`
 INSERT INTO `rent` (`prop_id`, `cust_id`, `rent`, `security_deposit`) VALUES

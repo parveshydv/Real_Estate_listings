@@ -1,3 +1,5 @@
+
+-- Trigger to Update Property Status When Sold ->
 DELIMITER $$
 
 CREATE TRIGGER `after_property_sold`
@@ -11,6 +13,7 @@ END$$
 
 DELIMITER ;
 
+-- Trigger to Ensure Unique Email Addresses in Customer Table ->
 DELIMITER $$
 
 CREATE TRIGGER `before_insert_customer`
@@ -24,6 +27,7 @@ END$$
 
 DELIMITER ;
 
+-- Trigger to Maintain Logs of Transactions ->
 CREATE TABLE `transaction_logs` (
     `log_id` INT AUTO_INCREMENT PRIMARY KEY,
     `t_id` VARCHAR(128),
@@ -34,7 +38,6 @@ CREATE TABLE `transaction_logs` (
 );
 
 DELIMITER $$
-
 CREATE TRIGGER `after_insert_transactions`
 AFTER INSERT ON `transactions`
 FOR EACH ROW
@@ -45,6 +48,7 @@ END$$
 
 DELIMITER ;
 
+-- Trigger to Ensure Rent is Greater Than Zero ->
 DELIMITER $$
 
 CREATE TRIGGER `before_insert_rent`
@@ -58,6 +62,7 @@ END$$
 
 DELIMITER ;
 
+-- Trigger to Automatically Update the Last Modified Timestamp on Customers ->
 ALTER TABLE `customer`
 ADD COLUMN `last_modified` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
 
@@ -72,6 +77,7 @@ END$$
 
 DELIMITER ;
 
+-- Trigger to Prevent Deletion of Sold Properties ->
 DELIMITER $$
 
 CREATE TRIGGER `before_delete_property`
