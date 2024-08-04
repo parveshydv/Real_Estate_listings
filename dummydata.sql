@@ -17,10 +17,32 @@ INSERT INTO `property` (`prop_id`, `cust_id`, `prop_type`, `prop_status`, `prop_
 ('P003', 3, 'Condo', 'Available', 300000, '789 Pine St');
 
 -- Insert sample data into `requirement`
-INSERT INTO `requirement` (`request_id`, `cust_id`, `price`, `area`, `prop_type`) VALUES
-(1, 1, 200000, 'Downtown', 'Apartment'),
-(2, 2, 300000, 'Suburbs', 'House'),
-(3, 3, 250000, 'City Center', 'Condo');
+INSERT INTO `requirement` (`request_id`, `cust_id`, `price`, `area`) VALUES
+(1, 1, 200000, 'Downtown'),
+(2, 2, 300000, 'Suburbs'),
+(3, 3, 250000, 'City Center');
+
+-- Insert sample property types
+INSERT INTO `property_type` (`type_id`,`prop_type`) VALUES 
+(1,'Apartment'),
+(2,'Condo'),
+(3,'House'),
+(4,'Townhouse'),
+(5,'Studio');
+
+
+-- Insert sample data into requirement_property_type
+
+-- Assume prop_type IDs are 1 for 'Apartment', 2 for 'Condo', 3 for 'House'...
+
+INSERT INTO `requirement_property_type` (`request_id`, `type_id`) VALUES 
+(1, 1),  -- Requirement 1 for Apartment
+(1, 3),  -- Requirement 1 for House
+(2, 2),  -- Requirement 2 for Condo
+(2, 4),  -- Requirement 2 for Townhouse
+(3, 1),  -- Requirement 3 for Apartment
+(3, 3);  -- Requirement 3 for House
+
 
 -- Insert sample data into `requires`
 INSERT INTO `requires` (`request_id`) VALUES

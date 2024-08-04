@@ -84,6 +84,20 @@ CREATE TABLE `requirement` (
     `cust_id` INT,
     `price` INT,
     `area` VARCHAR(128),
-    `prop_type` VARCHAR(128),
     FOREIGN KEY (`cust_id`) REFERENCES `customer`(`cust_id`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- In order to achieve 3NF ->
+CREATE TABLE `property_type` (
+    `type_id` INT PRIMARY KEY,
+    `prop_type` VARCHAR(128) UNIQUE
+);
+
+-- In order to achieve 4NF (linking requirements to property types) ->
+CREATE TABLE `requirement_property_type` (
+    `request_id` INT,
+    `type_id` INT,
+    PRIMARY KEY (`request_id`, `type_id`),
+    FOREIGN KEY (`request_id`) REFERENCES `requirement`(`request_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`type_id`) REFERENCES `property_type`(`type_id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
